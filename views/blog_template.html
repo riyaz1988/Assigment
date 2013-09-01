@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link rel="shortcut icon" type="image/ico" href="http://www.datatables.net/favicon.ico" />
+		
+		<title>School List</title>
+		<style type="text/css" title="currentStyle">
+			@import "media/css/demo_page.css";
+			@import "media/css/demo_table.css";
+		</style>
+		<script type="text/javascript" language="javascript" src="media/js/jquery.js"></script>
+		<script type="text/javascript" language="javascript" src="media/js/jquery.dataTables.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			$(document).ready(function() {
+				$('#example').dataTable();
+			} );
+		</script>
+	</head>
+	<body id="dt_example">
+		<div id="container">
+			<div id="demo">
+<table cellpadding="0" cellspacing="0" border="0" class="display" id="example" width="100%">
+	<thead>
+		<tr>
+			<th>School</th>
+			<th>Subject</th>
+			<th>Y3</th>
+			<th>Y5</th>
+			<th>Y7</th>
+			<th>Y9</th>
+			<th>Raw Gain Y3 to Y5</th>
+			<th>Factored gain Y3 to Y5</th>
+			<th>CLG% Y3 to Y5</th>
+			<th>Gain in gain Y3 to Y5</th>
+		</tr>
+	</thead>
+	<tbody>
+	{% for post in myposts %}
+		<tr class="odd gradeX">
+			<td>{{post['schoolName']}}</td>
+			<td>{{post['subject']}}</td>
+			<td>{{post['latestY3']}}</td>
+			<td>{{post['latestY5']}}</td>
+			<td>{{post['latestY7']}}</td>
+			<td>{{post['latestY9']}}</td>
+			<td>{{post['rawGainY3Y5']}}</td>
+			<td>{{post['factoredGainY3Y5']}}</td>
+			<td>{{post['glgY3Y5']}}</td>
+			<td>{{post['latestGainInGainY3Y5']}}</td>
+		</tr>
+	{% endfor %}	
+	</tbody>
+	<tfoot>
+		<tr>
+			<th>School</th>
+			<th>Subject</th>
+			<th>Y3</th>
+			<th>Y5</th>
+			<th>Y7</th>
+			<th>Y9</th>
+			<th>Raw Gain Y3 to Y5</th>
+			<th>Factored gain Y3 to Y5</th>
+			<th>CLG% Y3 to Y5</th>
+			<th>Gain in gain Y3 to Y5</th>		</tr>
+	</tfoot>
+</table>
+
+			</div>
+			<div class="spacer"></div>
+			
+		
+			
+			
+			
+		</div>
+	</body>
+</html>	
